@@ -22,7 +22,6 @@ struct Comment: Identifiable, Codable {
         case postId, author, content
     }
 
-    // 👇 Вот это добавь:
     init(id: String? = nil, postId: String, author: String, content: String) {
         self.id = id
         self.postId = postId
