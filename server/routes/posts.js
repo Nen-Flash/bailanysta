@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 
-// Получить все посты
 router.get('/', async (req, res) => {
   try {
     const posts = await Post.find().sort({ createdAt: -1 });
@@ -12,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Создать новый пост
 router.post('/', async (req, res) => {
   const { author, content } = req.body;
   const post = new Post({ author, content });
